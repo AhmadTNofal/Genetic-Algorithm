@@ -4,10 +4,10 @@ import matplotlib.pyplot as plt
 import math
 
 N = 20  # Number of genes in each individual
-P = 500  # Population size
-MUTRATE = 0.1  # Mutation rate
-Generations = 200  # Number of generations
-MUTSTEP = 0.1  # Mutation step
+P = 1000  # Population size
+MUTRATE = 0.08  # Mutation rate
+Generations = 500  # Number of generations
+MUTSTEP = 0.05  # Mutation step
 MAX = 10  # maximum value for a gene
 MIN = -10  # minimum value for a gene
 
