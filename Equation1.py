@@ -4,10 +4,10 @@ import matplotlib.pyplot as plt
 import math
 
 N = 20  # Number of genes in each individual
-P = 100  # Population size
-MUTRATE = 0.05  # Mutation rate
-Generations = 150  # Number of generations
-MUTSTEP = 2  # Mutation step
+P = 150  # Population size
+MUTRATE = 0.1  # Mutation rate
+Generations = 200  # Number of generations
+MUTSTEP = 0.5  # Mutation step
 MAX = 10  # maximum value for a gene
 MIN = -10  # minimum value for a gene
 
@@ -102,8 +102,6 @@ for x in range(Generations):
     for i in range(0,P):
         if (population[i].fitness > new_offspring[i].fitness):
            population[i]  = new_offspring[i]
-        # else:
-        #     population = copy.deepcopy(new_offspring)  # Replace the old population with the new offspring
       
     # Calculate the average fitness of the population
     average_fitness = sum(ind.fitness for ind in population) / P
