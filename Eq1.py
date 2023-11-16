@@ -5,8 +5,8 @@ import matplotlib.pyplot as plt
 # User-defined parameters
 P = 100  # Population size
 GEN = 200  # Number of generations
-MUTRATE = 0.15  # Mutation rate
-MUTSTEP = 0.1  # Mutation step
+MUTRATE = 0.05  # Mutation rate
+MUTSTEP = 2  # Mutation step
 T = 4  # Tournament size
 CROSS_POINTS = 2  # Number of crossover points
 
