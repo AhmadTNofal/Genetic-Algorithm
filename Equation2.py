@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import math
 
 N = 20  # Number of genes in each individual
-P = 150  # Population size
+P = 100  # Population size
 MUTRATE = 0.2  # Mutation rate
 Generations = 200  # Number of generations
 MUTSTEP = 0.2  # Mutation step
@@ -39,10 +39,10 @@ def test_function(ind):
     for i in range(0,N):
         answer1 = answer1 + (ind.gene[i]*ind.gene[i])
     for i in range(0,N):
-        answer2 = answer2 + (0.5*i*ind.gene[i])
+        answer2 = answer2 + (0.5*(i+1)*ind.gene[i])
     answer2 = answer2*answer2
     for i in range(0,N):
-        answer3 = answer3 + (0.5*i*ind.gene[i])
+        answer3 = answer3 + (0.5*(i+1)*ind.gene[i])
     answer3 = answer3*answer3*answer3*answer3
     utility = answer1 + answer2 + answer3
     return utility
