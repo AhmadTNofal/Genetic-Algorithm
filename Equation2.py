@@ -4,7 +4,7 @@ import matplotlib.pyplot as plt
 import math
 
 N = 20  # Number of genes in each individual
-P = 100  # Population size
+P = 150  # Population size
 MUTRATE = 0.2  # Mutation rate
 Generations = 200  # Number of generations
 MUTSTEP = 0.2  # Mutation step

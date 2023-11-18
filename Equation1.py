@@ -5,9 +5,9 @@ import math
 
 N = 20  # Number of genes in each individual
 P = 150  # Population size
-MUTRATE = 0.1  # Mutation rate
+MUTRATE = 0.5  # Mutation rate
 Generations = 200  # Number of generations
-MUTSTEP = 0.5  # Mutation step
+MUTSTEP = 1  # Mutation step
 MAX = 10  # maximum value for a gene
 MIN = -10  # minimum value for a gene
 
