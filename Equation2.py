@@ -5,9 +5,9 @@ import math
 
 N = 20  # Number of genes in each individual
 P = 150  # Population size
-MUTRATE = 0.2  # Mutation rate
+MUTRATE = 0.65  # Mutation rate
 Generations = 200  # Number of generations
-MUTSTEP = 0.2  # Mutation step
+MUTSTEP = 0.5  # Mutation step
 MAX = 10  # maximum value for a gene
 MIN = -5  # minimum value for a gene
 
@@ -126,10 +126,31 @@ for x in range(Generations):
     print("Best population fitness:", best_individual.fitness)
     print("\n")
 
-# Plot the evolution of fitness over generations
-plt.plot(range(Generations), average_fitness_list, label='Average Fitness')
-plt.plot(range(Generations), best_fitness_list, label='Best Fitness')
+start_gen = 15  # Starting generation for plotting
+
+# Plotting with grid
+plt.plot(range(start_gen, Generations), average_fitness_list[start_gen:], label='Average Fitness')
+plt.plot(range(start_gen, Generations), best_fitness_list[start_gen:], label='Best Fitness')
 plt.xlabel('Generation')
 plt.ylabel('Fitness')
 plt.legend()
+
+# Add grid to the plot
+plt.grid(True)
+
+# Set x-axis and y-axis limits
+plt.xlim(start_gen, Generations)
+
+min_fitness = min(min(average_fitness_list[start_gen:]), min(best_fitness_list[start_gen:]))
+max_fitness = max(max(average_fitness_list[start_gen:]), max(best_fitness_list[start_gen:]))
+plt.ylim(min_fitness, max_fitness)
+
+# Adjust the range 
+x_ticks = range(start_gen, Generations, 5)  # Every 5 generations
+y_ticks = range(int(min_fitness), int(max_fitness) + 1, 15)  # Every 15 units of fitness
+
+plt.xticks(x_ticks)
+plt.yticks(y_ticks)
+
+# Display the plot
 plt.show()
