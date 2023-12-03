@@ -5,9 +5,9 @@ import math
 
 N = 20  # Number of genes in each individual
 P = 150  # Population size
-MUTRATE = 0.1  # Mutation rate
+MUTRATE = 0.05  # Mutation rate
 Generations = 200  # Number of generations
-MUTSTEP = 1.75 # Mutation step
+MUTSTEP = 0.75 # Mutation step
 MAX = 10  # maximum value for a gene
 MIN = -10  # minimum value for a gene
 
@@ -139,7 +139,7 @@ plt.ylim(min_fitness, max_fitness)
 # Set x-axis and y-axis ticks
 # Adjust the range and step based on your data
 x_ticks = range(start_gen, Generations, 5)  # Every 5 generations
-y_ticks = range(int(min_fitness), int(max_fitness) + 1, 1)  # Every unit of fitness
+y_ticks = range(int(min_fitness), int(max_fitness) + 1, 5)  # Every unit of fitness
 
 plt.xticks(x_ticks)
 plt.yticks(y_ticks)
