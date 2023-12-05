@@ -16,8 +16,11 @@ class Individual:
         ind.fitness = ind.test_function()
 
     def test_function(ind):
-        utility = sum(i * ((2 * (g * g) - ind.gene[i - 1]) ** 2) for i, g in enumerate(ind.gene, start=1))
-        return ((ind.gene[0] - 1) ** 2) + utility
+        utility = 0
+        for i in range(1,N):
+            utility = utility + i*(((2*((ind.gene[i])*(ind.gene[i])))-ind.gene[i-1])*((2*((ind.gene[i])*(ind.gene[i])))-ind.gene[i-1]))
+        utility = ((ind.gene[0]-1)*(ind.gene[0]-1)) + utility
+        return utility
 
     def mutate(ind):
         index = random.randint(0, N - 1)
